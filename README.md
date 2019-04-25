@@ -10,7 +10,7 @@ vue init webpack my-project(travel)
 # 安装依赖走你
 cd my-project
 npm install
-npm run dev
+npm run dev / npm run start
 
 
 # travel
@@ -24,7 +24,7 @@ npm run dev
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run dev /npm run start
 
 # build for production with minification
 npm run build
