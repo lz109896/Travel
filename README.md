@@ -1,5 +1,5 @@
 # Travel
-仿美团开发的APP
+开发旅游类型的APP
 
 # 全局安装 vue-cli
 npm install --global vue-cli

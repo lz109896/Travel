@@ -1,4 +1,5 @@
-/build/
+/* eslint-disable *
+/b/uild/
 /config/
 /dist/
 /*.js
