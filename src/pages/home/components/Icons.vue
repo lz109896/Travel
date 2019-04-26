@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
        <div
        class="icon"
@@ -19,63 +19,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票景点门票景点门票景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州景点门票景点门票景点门票'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0004',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州融创景点门票景点门票景点门票景点门票'
-      }, {
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州融创景点门票景点门票景点门票'
-      }, {
-        id: '0007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0008',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州融创'
-      }, {
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0010',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州融创景点门票景点门票景点门票'
-      }, {
-        id: '0011',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '0012',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png',
-        desc: '广州融创'
-      }]
+      swiperOption: {
+        autoplay: false// 轮播图不要自动滚动
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
